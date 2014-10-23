@@ -1,0 +1,538 @@
+<!--
+Within this html page the Wortliste task of the Testbatterie will be presented.
+This html page should contain the whole process of this task as a collection of html5 pages.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Testbatterie-Aufgabe: Wortliste</title>
+
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.0b1.min.css"/>       
+        <link rel="stylesheet" href="css/style.css" media="screen and (orientation: landscape)" type="text/css">  
+
+        <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.0rc2.min.js"></script>
+        <script type="text/javascript" src="js/jstorage.js"></script>
+        <script type="text/javascript" src="js/wortlisteScript.js"></script>
+
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+
+    </head>
+
+
+
+
+    <body>
+
+       
+
+        <!--startpage for neurocare testbatterie with task: wortliste-->
+        <div data-role="page" id="wortlisteStart" data-dom-cache=true class="startPage" >
+
+
+            <div data-role="content">
+
+                <div class="testname">Aufgabe<br>Wortliste</div>
+
+
+
+            </div>
+
+            <!--script used to show start page for few seconds and the to switch to intro page-->
+            <script type="text/javascript">
+
+                $(document).delegate('#wortlisteStart', 'pageshow', function() {
+
+                    function showJustForWhile() {
+                        setTimeout(function() {
+                            $.mobile.changePage('#wortlisteIntro', {transition: "flip"});
+                        }, 4000);
+
+                    }
+
+                    showJustForWhile();
+
+                });
+            </script>
+
+
+        </div>
+
+
+
+
+        <!--intro page for neurocare testbatterie containing a small introduction to the tast wortliste-->
+        <div data-role="page" id="wortlisteIntro" data-dom-cache=true class="introPage" >
+
+            <div data-role="content">
+
+                <image src="css\images\icons\info.png" class="infoIcon"/>
+
+                <center>
+                    <p class="introText">
+                        Gleich werden Ihnen auf dem Bildschirm nacheinander 12 Wörter gezeigt.
+                        Sie erscheinen jeweils nur für einen kurzen Moment. </br> Merken Sie sich möglichst viele dieser Wörter, denn Sie werden
+                        später danach gefragt.
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="showWordSlide1();"/>
+
+            </div>
+
+
+        </div>  
+
+
+
+        <!--words will be slided after each other for the first iteration-->
+        <div data-role="page" id="wortlisteWordSlide1" data-dom-cache=true class="whitePage">
+
+            <div data-role="content">
+
+                <center><div id="wordToShow1" class="wordPresented"></div></center>
+
+                <script type="text/javascript">
+                var wordsArray1 = new Array("Paprika", "Kommode", "Nashorn", "Jacke", "Regal", "Gurke", "Bluse", "Igel", "Tisch", "Delfin", "Zwiebel", "Strumpf");
+
+                var currentWord1 = document.getElementById('wordToShow1');
+
+                var wordsArrayLength1 = wordsArray1.length;
+                var aktivloop1;
+
+                $(document).delegate('#wortlisteWordSlide1', 'pageshow', function() {
+
+                    var i = 0;
+
+                    function showWords() {
+                        aktivloop1 = setTimeout(function() {
+
+                            if (i < wordsArrayLength1) {
+
+                                currentWord1.innerHTML = wordsArray1[i];
+
+                                i++;
+                                setTimeout(function() {
+                                    currentWord1.innerHTML = "";
+
+                                    //5000
+                                }, 1000);
+                                showWords();
+                            }
+                            if (i === wordsArrayLength1) {
+                                clearTimeout(aktivloop1);
+                                setTimeout(function() {
+
+                                    currentWord1.innerHTML = "";
+
+                                    // show first wordpair
+                                    $.mobile.changePage('#wortlisteInstruct1', {transition: "flip"});
+                                    // 5000
+                                }, 2000);
+
+                            }
+                            // 7000
+                        }, 3000);
+                    }
+                    showWords();
+                });
+
+                </script>
+
+
+            </div>
+
+
+        </div> 
+
+
+
+        <!--words will be slided after each other for the second iteration-->
+        <div data-role="page" id="wortlisteWordSlide2" data-dom-cache=true class="whitePage">
+
+            <div data-role="content">
+
+                <center><div id="wordToShow2" class="wordPresented"></div></center>
+
+                <script type="text/javascript">
+                    var wordsArray2 = new Array("Paprika", "Kommode", "Nashorn", "Jacke", "Regal", "Gurke", "Bluse", "Igel", "Tisch", "Delfin", "Zwiebel", "Strumpf");
+
+                    var currentWord2 = document.getElementById('wordToShow2');
+
+                    var wordsArrayLength2 = wordsArray2.length;
+                    var aktivloop2;
+
+                    $(document).delegate('#wortlisteWordSlide2', 'pageshow', function() {
+
+                        var i = 0;
+
+                        function showWords() {
+                            aktivloop2 = setTimeout(function() {
+
+                                if (i < wordsArrayLength2) {
+
+                                    currentWord2.innerHTML = wordsArray2[i];
+
+                                    i++;
+                                    setTimeout(function() {
+                                        currentWord2.innerHTML = "";
+
+                                        //5000
+                                    }, 1000);
+                                    showWords();
+                                }
+                                if (i === wordsArrayLength2) {
+                                    clearTimeout(aktivloop2);
+                                    setTimeout(function() {
+
+                                        currentWord2.innerHTML = "";
+
+                                        // show first wordpair
+                                        $.mobile.changePage('#wortlisteInstruct3', {transition: "flip"});
+                                        // 5000
+                                    }, 2000);
+
+                                }
+                                // 7000
+                            }, 3000);
+                        }
+                        showWords();
+                    });
+
+                </script>
+
+
+            </div>
+
+
+        </div> 
+
+
+
+        <!--words will be slided after each other for the third iteration-->
+        <div data-role="page" id="wortlisteWordSlide3" data-dom-cache=true class="whitePage">
+
+            <div data-role="content">
+
+                <center><div id="wordToShow3" class="wordPresented"></div></center>
+
+                <script type="text/javascript">
+                    var wordsArray3 = new Array("Paprika", "Kommode", "Nashorn", "Jacke", "Regal", "Gurke", "Bluse", "Igel", "Tisch", "Delfin", "Zwiebel", "Strumpf");
+
+                    var currentWord3 = document.getElementById('wordToShow3');
+
+                    var wordsArrayLength3 = wordsArray3.length;
+                    var aktivloop3;
+
+                    $(document).delegate('#wortlisteWordSlide3', 'pageshow', function() {
+
+                        var i = 0;
+
+                        function showWords() {
+                            aktivloop3 = setTimeout(function() {
+
+                                if (i < wordsArrayLength3) {
+
+                                    currentWord3.innerHTML = wordsArray3[i];
+
+                                    i++;
+                                    setTimeout(function() {
+                                        currentWord3.innerHTML = "";
+
+                                        //5000
+                                    }, 1000);
+                                    showWords();
+                                }
+                                if (i === wordsArrayLength3) {
+                                    clearTimeout(aktivloop3);
+                                    setTimeout(function() {
+
+                                        currentWord3.innerHTML = "";
+
+                                        // show first wordpair
+                                        $.mobile.changePage('#wortlisteInstruct5', {transition: "flip"});
+                                        // 5000
+                                    }, 2000);
+
+                                }
+                                // 7000
+                            }, 3000);
+                        }
+                        showWords();
+                    });
+
+                </script>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!--instruction page for the first iteration of the tast wortliste-->
+        <div data-role="page" id="wortlisteInstruct1" data-dom-cache=true class="introPage" >
+
+            <div data-role="content">
+
+                <image src="css\images\icons\info.png" class="infoIcon"/>
+
+                <center>
+
+                    <p class="introText">
+                        <b>Was ist Ihre nächste Aufgabe?</b></br></br>
+                        Gleich sehen Sie wieder Wörter auf dem Bildschirm. Für jedes Wort sollen Sie entscheiden, ob es zu den am Anfang 
+                        gelernten Wörtern dazugehörte. </br>
+                        Wenn Sie der Meinung sind, das Wort gehörte dazu, drücken Sie JA. Sind Sie der Meinung das Wort gehörte nicht dazu, drücken Sie NEIN. </br>
+                        Wenn Sie sich nicht mehr erinnern, raten Sie bitte.
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="showWordSelection();"/>
+
+            </div>
+
+
+        </div> 
+
+
+
+        <!--instruction page after the first iteration of the tast wortliste-->
+        <div data-role="page" id="wortlisteInstruct2" data-dom-cache=true class="introPage" >
+
+            <div data-role="content">
+
+                <image src="css\images\icons\info.png" class="infoIcon"/>
+
+                <center>
+
+                    <p class="introText">
+                        Was ist Ihre nächste Aufgabe?</br></br>
+                        Gleich werden Ihnen noch einmal nacheinander die Anfangswörter gezeigt, die Sie zu Beginn gelernt haben. </br>
+                        Sie erscheinen wieder nur für einen kurzen Moment. </br>
+                        Merken Sie sich diese Wörter noch einmal so gut wie möglich, denn Sie werden später danach gefragt.
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="showWordSlide2();"/>
+
+            </div>
+
+
+        </div> 
+
+
+        <!--instruction page after the second iteration of the tast wortliste-->
+        <div data-role="page" id="wortlisteInstruct3" data-dom-cache=true class="introPage" >
+
+            <div data-role="content">
+
+                <image src="css\images\icons\info.png" class="infoIcon"/>
+
+                <center>
+
+                    <p class="introTextFull">
+                        Was ist Ihre nächste Aufgabe?</br></br>
+                        Die Wörter hatten alle unterschiedliche Anfangsbuchstaben, d.h. keine 2 Wörter fingen mit dem gleichen Buchstaben an. 
+                        Außerdem konnte man die Wörter auch verschiedenen Oberbegriffen zuordnen, nämlich: Gemüse, Kleidungsstücke, Möbelstücke und Tiere. 
+                        Gleich wird Ihnen auf dem Bildschirm ein Anfangsbuchstabe gezeigt. Versuchen Sie das dazugehörige Wort zu erinnern und entscheiden Sie dann, 
+                        zu welchem Oberbegriff das Wort gehört (z.B. Gemüse). 
+                        Es werden Ihnen drei Oberbegriffe vorgeschlagen. Wenn Sie sich nicht erinnern, raten Sie bitte.
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="showGenusSelection();"/>
+
+            </div>
+
+
+        </div>  
+
+
+
+        <!--instruction page after the second iteration of the tast wortliste-->
+        <div data-role="page" id="wortlisteInstruct4" data-dom-cache=true class="introPage" >
+
+            <div data-role="content">
+
+                <image src="css\images\icons\info.png" class="infoIcon"/>
+
+                <center>
+
+                    <p class="introTextFull">
+                        Was ist Ihre nächste Aufgabe?</br></br>
+                        Gleich werden Ihnen noch einmal nacheinander die Wörter gezeigt, die Sie am Anfang gelernt haben.<br>
+                        Sie erscheinen jeweils wieder nur für einen kurzen Moment. <br> Prägen Sie sich die Wörter noch einmal so gut wie möglich ein, denn Sie werden später danach gefragt.
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="showWordSlide3();"/>
+
+            </div>
+
+
+        </div> 
+
+
+        <!--instruction page after the second iteration of the tast wortliste-->
+        <div data-role="page" id="wortlisteInstruct5" data-dom-cache=true class="introPage" >
+
+            <div data-role="content">
+
+                <image src="css\images\icons\info.png" class="infoIcon"/>
+
+                <center>
+
+                    <p class="introTextFull">
+                        Was ist Ihre Aufgabe?</br></br>
+                        Die gelernten Wörter lassen sich vier Oberbegriffen zuordnen: Gemüse, Kleidungsstück, Möbelstück und Tiere.
+                        Zu jeder Kategorie haben Sie 3 Wörter gesehen. Gleich wird Ihnen ein Oberbegriff vorgegeben. Gesucht werden die Anfangsbuchstaben der 3 zugehörigen Wörter.
+                        Es werden Ihnen 9 Anfangsbuchstaben zur Auswahl vorgeschlagen. Tippen Sie die richtigen 3 Anfangsbuchstaben auf dem Bildschirm an. Wenn Sie
+                        sich nicht erinnern, raten Sie bitte.
+                        Wollen Sie sich korrigieren, dann tippen Sie einen Buchstaben, um die Markierung aufzuheben. Wenn Sie 3 Buchstaben markiert haben, dann drücken Sie auf "Weiter". 
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="showLetterSelection();"/>
+
+            </div>
+
+
+        </div> 
+
+
+        <!--presentation page for words of the first iteration from the task wortliste-->
+        <div data-role="page" id="wordSelection" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+                <center> <div id="wordToPresent" class="wordPresented"></div> </center>
+
+                <image src="css\images\btns-bg\bt-ja.png" class="yesButton" onclick="yesAndGoToNextWord();"/>
+                <image src="css\images\btns-bg\bt-nein.png" class="noButton" onclick="noAndGoToNextWord();"/>
+
+            </div>
+
+
+        </div>  
+
+
+        <!--presentation page for genus words of the second iteration from the task wortliste-->
+        <div data-role="page" id="genusSelection" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+                <div>
+                    <h1>Ein Wort begann mit dem Angangsbuchstaben <div class="bigLetter" id="firstLetter"> </div> </h1>  
+                </div>
+
+                <h2> Es handelte sich um ...</h2>
+
+                <br>
+
+                <ul class="genusList">
+                    <li>    <a data-role="button" data-inline="true" data-group="genusBtn" id="genusButton1" class="genusButton" onclick="selectGenusWord(this);"><div id="genus1">  </div>  </a>   </li>
+                    <li>    <a data-role="button" data-inline="true" data-group="genusBtn" id="genusButton2" class="genusButton" onclick="selectGenusWord(this);"><div id="genus2">  </div>  </a>   </li>
+                    <li>    <a data-role="button" data-inline="true" data-group="genusBtn" id="genusButton3" class="genusButton" onclick="selectGenusWord(this);"><div id="genus3">  </div>  </a>   </li>
+
+                </ul>    
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToNextGenusPresentation();"/>
+
+            </div>
+
+
+        </div>  
+
+
+        <!--presentation page for first letter of the third iteration from the task wortliste-->
+        <div data-role="page" id="firstLetterSelection" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+                <center> 
+                    <h1> Oberbegriff </h1>
+
+                    <div class="bigLetter" id="wordsCategorie"> </div>
+
+
+
+                    <br>
+
+                    <div>
+                        <h2> Wählen Sie die drei Anfangsbuchstaben der drei <div id="wordsCategorieRep" class="bigLetter">   </div>.</h2>
+
+                    </div>
+
+                </center>
+                <br>
+
+                <center>
+                    <div class="letterFragment" id="letter1" data-group="letter" onclick="selectLetter(this);"> </div>   
+                    <div class="letterFragment" id="letter2" data-group="letter" onclick="selectLetter(this);"> </div>  
+                    <div class="letterFragment" id="letter3" data-group="letter" onclick="selectLetter(this);"> </div>  
+                    <div class="letterFragment" id="letter4" data-group="letter" onclick="selectLetter(this);"> </div>   
+                    <div class="letterFragment" id="letter5" data-group="letter" onclick="selectLetter(this);"> </div>  
+                    <div class="letterFragment" id="letter6" data-group="letter" onclick="selectLetter(this);"> </div>  
+                    <div class="letterFragment" id="letter7" data-group="letter" onclick="selectLetter(this);"> </div>   
+                    <div class="letterFragment" id="letter8" data-group="letter" onclick="selectLetter(this);"> </div>   
+                    <div class="letterFragment" id="letter9" data-group="letter" onclick="selectLetter(this);"> </div>   
+                </center>   
+
+                <center>
+                    <h2> Durch erneutes Antippen eines Buchstaben machen Sie die Auswahl rückgängig. </h2>
+                    <h2> Wenn Sie fertig sind, dann drücken Sie auf "weiter". </h2>
+                </center>
+                
+                <h2 id="messageHint" class="messageHintText">   </h2>
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="showNextLetterPresentation();"/>
+
+            </div>
+
+
+        </div>  
+
+
+
+        <!--end page after the third iteration of the tast wortliste-->
+        <div data-role="page" id="endPage" data-dom-cache=true class="introPage" >
+
+            <div data-role="content">
+
+                <image src="css\images\icons\tipp.png" class="infoIcon"/>
+
+                <center>
+                    <h1 class="taskEndText">Diese Aufgabe haben Sie geschafft!</h1>
+
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToBilderGeschichtenTask();"/>
+
+            </div>
+
+
+        </div> 
+
+
+
+    </body>
+</html>
