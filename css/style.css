@@ -88,12 +88,12 @@
         font-size: 33px;
         color: black;
         text-shadow: none;
-        text-align: center;
+        text-align: justify;
         font-weight: bold;  
         position: absolute;
-        top: 30%;
-        left: 10%;
-        right: 10%;
+        top: 22%;
+        left: 5%;
+        right: 5%;
     }
 
     .introTextFull{
@@ -104,24 +104,54 @@
         font-weight: bold;  
         position: absolute;
         top: 20%;
-        left: 10%;
-        right: 10%;
+        left: 5%;
+        right: 5%;
     }
 
     .defaultButton{
-        /*        background-image:url('images/btns-bg/bt-weiter.png');*/
+       /*background-image:url('images/btns-bg/bt-weiter.png');*/
         background-size: 100%;
         background-repeat:no-repeat;       
         height: 88px;
         width: 245px;
         position: absolute;
-        bottom: 1%;
+        bottom: 2%;
         right: 5%;
         font-size: x-large;
         text-shadow: none;
     }
 
+
+ /*to use with the default phonegap button element*/
+/* .defaultButton{
+    
+        background-size: cover;      
+        background-color: #64C463;      
+        height: 80px;
+        width: 237px;
+        position: absolute;
+        bottom: 1%;
+        right: 5%;
+        font-size: x-large;
+        text-shadow: none;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+    }*/
+    
+/*    .buttonImage{
+        position: relative;
+        top: -15px;
+        left: -25px;
+    }*/
+
+
     .defaultButton:active, .defaultButton:focus, .defaultButton.active{
+        background-image:url('images/btns-bg/bt-weiter-hover.png');
+        position:absolute; 
+        bottom: 1.8%;
+        right: 4.8%;
         background-image: none;
         outline: none;
         -webkit-box-shadow: none;
@@ -131,19 +161,15 @@
     .infoIcon{
         background-size: 100%;
         background-repeat:no-repeat;       
-        height: 80px;
-        width: 81px;
-        position: absolute;
-        top: 3%;
-        left: 1%;
+        height: 70px;
+        width: 71px;
+        position: absolute;       
+        left: 5%;
+        top: 3px;
 
     }
 
-    /*    .defaultButton:hover{
-            background-image:url('images/btns-bg/bt-weiter-hover.png');
-            cursor: pointer;
-           
-        }*/
+  
 
     .genusButton{
         height: 60px;
@@ -177,56 +203,54 @@
 
 
     .yesButton{
-        /*background-image:url('images/btns-bg/bt-ja.png');*/
         background-size: 100%;
         background-repeat:no-repeat;       
-        height: 70px;
-        width: 200px;
+        height: 88px;
+        width: 245px;
         position: absolute;
-        top: 70%;
-        right: 10%;
+        top: 80%;
+        right: 5%;
         font-size: x-large;
         text-shadow: none;
     }
 
-    /*    .yesButton:hover{
-            background-image:url('images/btns-bg/bt-ja-hover.png');
-            cursor: pointer;
-           
-        }*/
+   
 
     .yesButton:active, .yesButton:focus, .yesButton.active{
+        background-image:url('images/btns-bg/bt-ja-hover.png');
         background-image: none;
         outline: none;
         -webkit-box-shadow: none;
         box-shadow: none;
+        position:absolute; 
+        top: 80.2%;
+        right: 4.8%;
     }
 
 
-    .noButton{
-        /*background-image:url('images/btns-bg/bt-nein.png');*/
+    .noButton{        
         background-size: 100%;
         background-repeat:no-repeat;       
-        height: 70px;
-        width: 200px;
+        height: 88px;
+        width: 245px;
         position: absolute;
-        top: 70%;
-        left: 10%;
+        top: 80%;
+        left: 5%;
         font-size: x-large;
         text-shadow: none;
     }
 
-    /*    .noButton:hover{
-            background-image:url('images/btns-bg/bt-nein-hover.png');
-            cursor: pointer;
-           
-        }*/
+   
 
     .noButton:active, .noButton:focus, .noButton.active{
+        background-image:url('images/btns-bg/bt-nein-hover.png');
         background-image: none;
         outline: none;
         -webkit-box-shadow: none;
         box-shadow: none;
+        position:absolute; 
+        top: 80.2%;
+        left: 5.2%;
     }
 
     .wordPresented {

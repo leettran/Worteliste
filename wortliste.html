@@ -83,6 +83,8 @@ This html page should contain the whole process of this task as a collection of 
                 </center>
 
 
+                
+                <!--<a data-role="button" data-inline="true" class="defaultButton" onclick="showWordSlide1();"><image class="buttonImage" src="css\images\btns-bg\bt-weiter.png" /></a>-->
                 <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="showWordSlide1();"/>
 
             </div>
@@ -439,7 +441,7 @@ This html page should contain the whole process of this task as a collection of 
             <div data-role="content">
 
                 <div>
-                    <h1>Ein Wort begann mit dem Angangsbuchstaben <div class="bigLetter" id="firstLetter"> </div> </h1>  
+                    <h1>Ein Wort begann mit dem Anfangsbuchstaben <div class="bigLetter" id="firstLetter"> </div> </h1>  
                 </div>
 
                 <h2> Es handelte sich um ...</h2>
@@ -451,7 +453,9 @@ This html page should contain the whole process of this task as a collection of 
                     <li>    <a data-role="button" data-inline="true" data-group="genusBtn" id="genusButton2" class="genusButton" onclick="selectGenusWord(this);"><div id="genus2">  </div>  </a>   </li>
                     <li>    <a data-role="button" data-inline="true" data-group="genusBtn" id="genusButton3" class="genusButton" onclick="selectGenusWord(this);"><div id="genus3">  </div>  </a>   </li>
 
-                </ul>    
+                </ul>  
+                
+                <h2 id="messageHint2" class="messageHintText">   </h2>
 
 
                 <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToNextGenusPresentation();"/>
@@ -525,7 +529,7 @@ This html page should contain the whole process of this task as a collection of 
                 </center>
 
 
-                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToBilderGeschichtenTask();"/>
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" />
 
             </div>
 

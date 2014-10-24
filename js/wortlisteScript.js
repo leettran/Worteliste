@@ -183,8 +183,10 @@ function goToNextGenusPresentation() {
     {
         // check if program can forward to next presentation
         if (!canForward) {
-
-            alert("Bitte wählen Sie einen Oberbegriff aus!");
+// show hint text for few seconds
+            $("#messageHint2").html("Bitte wählen Sie eine Kategorie aus!");
+            setTimeout(function() {$("#messageHint2").html(""); }, 2000);
+//            alert("Bitte wählen Sie einen Oberbegriff aus!");
             return;
         }
 
@@ -426,9 +428,9 @@ function showNextLetterPresentation() {
     {
         if (selectedLettersCnt < 3) {
             var restToSelect = (3 - selectedLettersCnt);
-//            alert("Bitte wählen Sie noch " + restToSelect + " Anfangsbuchstaben aus!");
+             // show hint text for few seconds
             $("#messageHint").html("Bitte wählen Sie noch " + restToSelect + " Anfangsbuchstaben aus!");
-            setTimeout(function() {$("#messageHint").html(""); }, 1000);
+            setTimeout(function() {$("#messageHint").html(""); }, 2000);
             return;
         }
 
