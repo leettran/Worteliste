@@ -1,5 +1,5 @@
 <!--
-Within this html page the Wortliste task of the Testbatterie will be presented.
+Within this html page the Worteliste task of the Testbatterie will be presented.
 This html page should contain the whole process of this task as a collection of html5 pages.
 -->
 <!DOCTYPE html>
@@ -31,13 +31,13 @@ This html page should contain the whole process of this task as a collection of 
 
        
 
-        <!--startpage for neurocare testbatterie with task: wortliste-->
+        <!--startpage-->
         <div data-role="page" id="wortlisteStart" data-dom-cache=true class="startPage" >
 
 
             <div data-role="content">
 
-                <div class="testname">Aufgabe<br>Wortliste</div>
+                <div class="testname">Aufgabe<br>Worteliste</div>
 
 
 
@@ -54,6 +54,16 @@ This html page should contain the whole process of this task as a collection of 
                         }, 4000);
 
                     }
+                    
+                    
+                    
+                    // bind buttons to tap events
+                    $("td[data-group*='genusBtn']").bind("tap", function () {
+                        selectGenusWord(this);
+                    });
+                    $("td[data-group*='letter']").bind("tap", function () {
+                        selectLetter(this);
+                    });
 
                     showJustForWhile();
 
@@ -66,7 +76,7 @@ This html page should contain the whole process of this task as a collection of 
 
 
 
-        <!--intro page for neurocare testbatterie containing a small introduction to the tast wortliste-->
+        <!--intro page-->
         <div data-role="page" id="wortlisteIntro" data-dom-cache=true class="introPage" >
 
             <div data-role="content">
@@ -94,7 +104,7 @@ This html page should contain the whole process of this task as a collection of 
 
 
 
-        <!--words will be slided after each other for the first iteration-->
+        <!--first words presentation-->
         <div data-role="page" id="wortlisteWordSlide1" data-dom-cache=true class="whitePage">
 
             <div data-role="content">
@@ -156,7 +166,7 @@ This html page should contain the whole process of this task as a collection of 
 
 
 
-        <!--words will be slided after each other for the second iteration-->
+        <!--second words presentation-->
         <div data-role="page" id="wortlisteWordSlide2" data-dom-cache=true class="whitePage">
 
             <div data-role="content">
@@ -218,7 +228,7 @@ This html page should contain the whole process of this task as a collection of 
 
 
 
-        <!--words will be slided after each other for the third iteration-->
+        <!--third words presentation-->
         <div data-role="page" id="wortlisteWordSlide3" data-dom-cache=true class="whitePage">
 
             <div data-role="content">
@@ -279,7 +289,7 @@ This html page should contain the whole process of this task as a collection of 
         </div>
 
 
-        <!--instruction page for the first iteration of the tast wortliste-->
+        <!--instruction page for first presentation-->
         <div data-role="page" id="wortlisteInstruct1" data-dom-cache=true class="introPage" >
 
             <div data-role="content">
@@ -289,10 +299,10 @@ This html page should contain the whole process of this task as a collection of 
                 <center>
 
                     <p class="introText">
-                        <b>Was ist Ihre nächste Aufgabe?</b></br></br>
+                        <u>Was ist Ihre nächste Aufgabe? </u></br></br>
                         Gleich sehen Sie wieder Wörter auf dem Bildschirm. Für jedes Wort sollen Sie entscheiden, ob es zu den am Anfang 
                         gelernten Wörtern dazugehörte. </br>
-                        Wenn Sie der Meinung sind, das Wort gehörte dazu, drücken Sie JA. Sind Sie der Meinung das Wort gehörte nicht dazu, drücken Sie NEIN. </br>
+                        Wenn Sie der Meinung sind, das Wort gehörte dazu, drücken Sie "JA". Sind Sie der Meinung das Wort gehörte nicht dazu, drücken Sie "NEIN". </br>
                         Wenn Sie sich nicht mehr erinnern, raten Sie bitte.
 
                     </p>
@@ -308,7 +318,7 @@ This html page should contain the whole process of this task as a collection of 
 
 
 
-        <!--instruction page after the first iteration of the tast wortliste-->
+        <!--instruction page for second presentation-->
         <div data-role="page" id="wortlisteInstruct2" data-dom-cache=true class="introPage" >
 
             <div data-role="content">
@@ -318,7 +328,7 @@ This html page should contain the whole process of this task as a collection of 
                 <center>
 
                     <p class="introText">
-                        Was ist Ihre nächste Aufgabe?</br></br>
+                    <u>Was ist Ihre nächste Aufgabe?</u></br></br>
                         Gleich werden Ihnen noch einmal nacheinander die Anfangswörter gezeigt, die Sie zu Beginn gelernt haben. </br>
                         Sie erscheinen wieder nur für einen kurzen Moment. </br>
                         Merken Sie sich diese Wörter noch einmal so gut wie möglich, denn Sie werden später danach gefragt.
@@ -335,7 +345,7 @@ This html page should contain the whole process of this task as a collection of 
         </div> 
 
 
-        <!--instruction page after the second iteration of the tast wortliste-->
+        <!--instruction page for third presentation-->
         <div data-role="page" id="wortlisteInstruct3" data-dom-cache=true class="introPage" >
 
             <div data-role="content">
@@ -345,7 +355,7 @@ This html page should contain the whole process of this task as a collection of 
                 <center>
 
                     <p class="introTextFull">
-                        Was ist Ihre nächste Aufgabe?</br></br>
+                    <u>Was ist Ihre nächste Aufgabe?</u></br></br>
                         Die Wörter hatten alle unterschiedliche Anfangsbuchstaben, d.h. keine 2 Wörter fingen mit dem gleichen Buchstaben an. 
                         Außerdem konnte man die Wörter auch verschiedenen Oberbegriffen zuordnen, nämlich: Gemüse, Kleidungsstücke, Möbelstücke und Tiere. 
                         Gleich wird Ihnen auf dem Bildschirm ein Anfangsbuchstabe gezeigt. Versuchen Sie das dazugehörige Wort zu erinnern und entscheiden Sie dann, 
@@ -365,7 +375,7 @@ This html page should contain the whole process of this task as a collection of 
 
 
 
-        <!--instruction page after the second iteration of the tast wortliste-->
+        <!--instruction page for third presentation 2-->
         <div data-role="page" id="wortlisteInstruct4" data-dom-cache=true class="introPage" >
 
             <div data-role="content">
@@ -375,7 +385,7 @@ This html page should contain the whole process of this task as a collection of 
                 <center>
 
                     <p class="introTextFull">
-                        Was ist Ihre nächste Aufgabe?</br></br>
+                    <u>Was ist Ihre nächste Aufgabe?</u></br></br>
                         Gleich werden Ihnen noch einmal nacheinander die Wörter gezeigt, die Sie am Anfang gelernt haben.<br>
                         Sie erscheinen jeweils wieder nur für einen kurzen Moment. <br> Prägen Sie sich die Wörter noch einmal so gut wie möglich ein, denn Sie werden später danach gefragt.
 
@@ -391,7 +401,7 @@ This html page should contain the whole process of this task as a collection of 
         </div> 
 
 
-        <!--instruction page after the second iteration of the tast wortliste-->
+        <!--instruction page for third presentation 3-->
         <div data-role="page" id="wortlisteInstruct5" data-dom-cache=true class="introPage" >
 
             <div data-role="content">
@@ -401,7 +411,7 @@ This html page should contain the whole process of this task as a collection of 
                 <center>
 
                     <p class="introTextFull">
-                        Was ist Ihre Aufgabe?</br></br>
+                    <u>Was ist Ihre Aufgabe?</u></br></br>
                         Die gelernten Wörter lassen sich vier Oberbegriffen zuordnen: Gemüse, Kleidungsstück, Möbelstück und Tiere.
                         Zu jeder Kategorie haben Sie 3 Wörter gesehen. Gleich wird Ihnen ein Oberbegriff vorgegeben. Gesucht werden die Anfangsbuchstaben der 3 zugehörigen Wörter.
                         Es werden Ihnen 9 Anfangsbuchstaben zur Auswahl vorgeschlagen. Tippen Sie die richtigen 3 Anfangsbuchstaben auf dem Bildschirm an. Wenn Sie
@@ -420,7 +430,7 @@ This html page should contain the whole process of this task as a collection of 
         </div> 
 
 
-        <!--presentation page for words of the first iteration from the task wortliste-->
+        <!--selection page after first presentation-->
         <div data-role="page" id="wordSelection" data-dom-cache=true class="whitePage" >
 
             <div data-role="content">
@@ -435,7 +445,7 @@ This html page should contain the whole process of this task as a collection of 
         </div>  
 
 
-        <!--presentation page for genus words of the second iteration from the task wortliste-->
+        <!--selection page after second presentation-->
         <div data-role="page" id="genusSelection" data-dom-cache=true class="whitePage" >
 
             <div data-role="content">
@@ -449,9 +459,9 @@ This html page should contain the whole process of this task as a collection of 
                 <br>
 
                 <ul class="genusList">
-                    <li>    <a data-role="button" data-inline="true" data-group="genusBtn" id="genusButton1" class="genusButton" onclick="selectGenusWord(this);"><div id="genus1">  </div>  </a>   </li>
-                    <li>    <a data-role="button" data-inline="true" data-group="genusBtn" id="genusButton2" class="genusButton" onclick="selectGenusWord(this);"><div id="genus2">  </div>  </a>   </li>
-                    <li>    <a data-role="button" data-inline="true" data-group="genusBtn" id="genusButton3" class="genusButton" onclick="selectGenusWord(this);"><div id="genus3">  </div>  </a>   </li>
+                    <li>    <a data-role="button" data-inline="true" data-group="genusBtn" id="genusButton1" class="genusButton" ><div id="genus1">  </div>  </a>   </li>
+                    <li>    <a data-role="button" data-inline="true" data-group="genusBtn" id="genusButton2" class="genusButton" ><div id="genus2">  </div>  </a>   </li>
+                    <li>    <a data-role="button" data-inline="true" data-group="genusBtn" id="genusButton3" class="genusButton" ><div id="genus3">  </div>  </a>   </li>
 
                 </ul>  
                 
@@ -466,7 +476,7 @@ This html page should contain the whole process of this task as a collection of 
         </div>  
 
 
-        <!--presentation page for first letter of the third iteration from the task wortliste-->
+        <!--selection page after third presentation-->
         <div data-role="page" id="firstLetterSelection" data-dom-cache=true class="whitePage" >
 
             <div data-role="content">
@@ -489,15 +499,15 @@ This html page should contain the whole process of this task as a collection of 
                 <br>
 
                 <center>
-                    <div class="letterFragment" id="letter1" data-group="letter" onclick="selectLetter(this);"> </div>   
-                    <div class="letterFragment" id="letter2" data-group="letter" onclick="selectLetter(this);"> </div>  
-                    <div class="letterFragment" id="letter3" data-group="letter" onclick="selectLetter(this);"> </div>  
-                    <div class="letterFragment" id="letter4" data-group="letter" onclick="selectLetter(this);"> </div>   
-                    <div class="letterFragment" id="letter5" data-group="letter" onclick="selectLetter(this);"> </div>  
-                    <div class="letterFragment" id="letter6" data-group="letter" onclick="selectLetter(this);"> </div>  
-                    <div class="letterFragment" id="letter7" data-group="letter" onclick="selectLetter(this);"> </div>   
-                    <div class="letterFragment" id="letter8" data-group="letter" onclick="selectLetter(this);"> </div>   
-                    <div class="letterFragment" id="letter9" data-group="letter" onclick="selectLetter(this);"> </div>   
+                    <div class="letterFragment" id="letter1" data-group="letter" > </div>   
+                    <div class="letterFragment" id="letter2" data-group="letter" > </div>  
+                    <div class="letterFragment" id="letter3" data-group="letter" > </div>  
+                    <div class="letterFragment" id="letter4" data-group="letter" > </div>   
+                    <div class="letterFragment" id="letter5" data-group="letter" > </div>  
+                    <div class="letterFragment" id="letter6" data-group="letter" > </div>  
+                    <div class="letterFragment" id="letter7" data-group="letter" > </div>   
+                    <div class="letterFragment" id="letter8" data-group="letter" > </div>   
+                    <div class="letterFragment" id="letter9" data-group="letter" > </div>   
                 </center>   
 
                 <center>
@@ -516,7 +526,7 @@ This html page should contain the whole process of this task as a collection of 
 
 
 
-        <!--end page after the third iteration of the tast wortliste-->
+        <!--end page-->
         <div data-role="page" id="endPage" data-dom-cache=true class="introPage" >
 
             <div data-role="content">
